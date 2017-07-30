@@ -3,7 +3,7 @@ This is a `oh-my-zsh` plugin that lets you run `phpunit`-tests in a docker conta
 This plugin comes with autocompletion for running containers, commands and phpunit groups.
 
 ## Installation
-In order to install you need `Docker` an `oh-my-zsh`. Then you can install the plugin doing the following:
+In order to install you need `Docker` and `oh-my-zsh`. Then you can install the plugin doing the following:
 
 
 ```
@@ -13,7 +13,7 @@ zsh
 ```
 
 ## Preconditions
-After installing the plugin you have to define two variables. This plugins needs to know where the phpunit
+After installing the plugin you have to define two variables. This plugin needs to know where the phpunit
 executable is located in your containers. If you want to generate coverage reports you also have to define the output folder. The archive this you can add the following variables to your `~/.zshrc` file:
 
 ```
