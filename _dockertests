@@ -1,0 +1,34 @@
+## AUTHOR: Nico Windler
+## 07.2017
+#compdef dockertests
+
+_dockertests() {
+    _arguments '1: :->container' '2: :->tests' '3: :->groupname'
+
+    case $state in
+        container)
+            __docker_get_containers "$@"
+            ;;
+        tests)
+            local -a options
+            options=(
+              'all:Run all tests (optional). Usage: <container> all'
+              'filter:Run single test. Usage: <container> filter <filter, e.g. test_name>'
+              'group:Run a test group. Usage: <container> group <group_name>'
+              'coverage:Run all tests and generate coverage report. Make sure coverage driver like xdebug is enabled Usage: <container> coverage'
+            )
+            _describe 'values' options
+            return 1
+            ;;
+        groupname)
+            case ${words[3]} in
+              group)
+                  groups=($(docker exec ${words[2]} /bin/bash -c "export TERM=xterm; exec $__DOCKER_PHPUNIT --list-groups" | awk '$1 ~ /-.*/ { print substr($0,3)}'))
+                  _describe 'values' groups
+                  return 1
+            esac
+            ;;
+        esac
+}
+
+_dockertests "$@"

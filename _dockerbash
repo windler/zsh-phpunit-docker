@@ -1,0 +1,14 @@
+## AUTHOR: Nico Windler
+## 07.2017
+#compdef dockerbash
+
+_dockerbash() {
+    _arguments '1: :->container'
+    case $state in
+        container)
+            __docker_get_containers running all "$@"
+            ;;
+    esac;
+}
+
+_dockerbash "$@"
