@@ -17,7 +17,7 @@ After installing the plugin you have to define two variables. This plugins needs
 executable is located in your containers. If you want to generate coverage reports you also have to define the output folder. The archive this you can add the following variables to your `~/.zshrc` file:
 
 ```
-__DOCKER_PHPUNIT=""./vendor/phpunit/phpunit/phpunit"
+__DOCKER_PHPUNIT="./vendor/phpunit/phpunit/phpunit"
 __DOCKER_PHPUNIT_COVERAGE_DIR="coverage_report"
 ```
 
