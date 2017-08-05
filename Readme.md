@@ -21,7 +21,7 @@ __DOCKER_PHPUNIT="./vendor/phpunit/phpunit/phpunit"
 __DOCKER_PHPUNIT_COVERAGE_DIR="coverage_report"
 ```
 
-## Usage and commands
+## Dockertests
 The basic command is
 ```
 dockertests <container> [<option> [<arg>]]
@@ -40,3 +40,13 @@ coverage - runs all tests except ignore-group with coverage report (html)
 ```
 
 If the `group` command is provided you can autocomplete the phpunit group (this takes a while).
+
+## Dockerbash
+In addition to run tests you can simply start a `bash` on a cotainer using
+
+```
+dockerbash <container>
+```
+
+The argument `<container>` is the name or id of a running container. You can use `tab`
+for autocompletion.
