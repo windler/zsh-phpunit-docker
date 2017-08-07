@@ -36,7 +36,8 @@ for autocompletion. After choosing a container you have various options:
 all - Runs all tests except the ignore-group (if used). This is the default command.
 group - Runs tests for a phpunit group
 filter - provides a filter for e.g. running one tests
-coverage - runs all tests except ignore-group with coverage report (html)
+coverage - runs all tests except ignore-group and prints coverage (console)
+coverage-report - runs all tests except ignore-group with coverage report (html)
 ```
 
 If the `group` command is provided you can autocomplete the phpunit group (this takes a while).

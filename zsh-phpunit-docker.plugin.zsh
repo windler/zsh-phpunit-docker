@@ -23,6 +23,10 @@ dockertests() {
         return 0
         ;;
       coverage)
+        docker exec -it $1 /bin/bash -c "export TERM=xterm; exec $__DOCKER_PHPUNIT --exclude-group ignore --coverage-text"
+        return 0
+        ;;
+      coverage-report)
         docker exec -it $1 /bin/bash -c "export TERM=xterm; exec $__DOCKER_PHPUNIT --exclude-group ignore --coverage-html $__DOCKER_PHPUNIT_COVERAGE_DIR"
         return 0
         ;;
